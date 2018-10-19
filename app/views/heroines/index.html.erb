@@ -1,10 +1,21 @@
 <h2>All Heroines</h2>
 
+<h3>Search By Superpower:</h3>
+<%= form_tag "/search", method: "GET" do %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
+
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine %>
     </li>
     <br>
   <% end %>
 </ul>
+
+<br>
+<br>
+
+<%= link_to "Go to Power Index", powers_path %>

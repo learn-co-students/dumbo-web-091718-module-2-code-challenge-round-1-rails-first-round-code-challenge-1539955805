@@ -1,0 +1,10 @@
+<h2>All Heroines</h2>
+
+<h3><font color='red'>No superpowers match that name.<br>
+Please try again:</font></h3>
+
+<h3>Search By Superpower:</h3>
+<%= form_tag "/search", method: "GET" do %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>

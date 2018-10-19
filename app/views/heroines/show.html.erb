@@ -1,0 +1,8 @@
+<h1><%= @heroine.name %></h1>
+<p><em>Super Name: <%= @heroine.super_name %></em></p>
+<br>
+<h3>Super Power:</h3>
+<h4><%= link_to @heroine.power.name.titleize, @heroine.power %> </h4>
+<br>
+<br>
+<%= link_to "Back", heroines_path %>
