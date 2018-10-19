@@ -1,0 +1,23 @@
+<h1>Create A New Heroine:</h1>
+
+<% if @heroine.errors.any? %>
+ERROR: Heroine could not be saved
+<ul>
+  <% @heroine.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+  <% end %>
+</ul>
+<% end %>
+
+<%= form_for @heroine do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :super_name %>
+  <%= f.text_field :super_name %><br>
+
+  <%= f.label :power_id %>
+  <%= f.collection_select :power_id, @powers, :id, :name %><br>
+
+  <%= f.submit %>
+<% end %>
